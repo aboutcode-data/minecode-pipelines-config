@@ -1,107 +1,42 @@
-A Simple Python Project Skeleton
-================================
+minecode-pipelines configuration
+==================================
 
-This repo attempts to standardize the structure of the Python-based project's
-repositories using modern Python packaging and configuration techniques.
-Using this `blog post`_ as inspiration, this repository serves as the base for
-all new Python projects and is mergeable in existing repositories as well.
+This is released at pypi: https://pypi.org/project/minecode-pipelines/
 
-.. _blog post: https://blog.jaraco.com/a-project-skeleton-for-python-projects/
+To install `minecode-pipelines` with scancode.io:
 
+* Clone https://github.com/aboutcode-org/scancode.io
+* Specify the federatedcode settings in ``.env`` file
+* Run ``make clean && make dev-mining && make run``
+* Then select and start the mining pipeline according to which ecosystem
+  you want to mine packageURLs from.
 
-Usage
-=====
+Configuration format
+=======================
 
-A brand new project
--------------------
+* configuration/checkpoints for each ecossytem would be stored in a root folder
+  with the same name as the package type defined in https://github.com/package-url/purl-spec (example: ``pypi``)
 
-.. code-block:: bash
+* ``checkpoints.json`` stores checkpoints related to the package URL mining like:
 
-    git init my-new-repo
-    cd my-new-repo
-    git pull git@github.com:nexB/skeleton
+  * last serial number processed (used in indexes at pypi, npm etc)
+  * last processed commit (where the data is stored in git repos)
+  * directory to store las fetched index data (like the JSON fetched from pypi simple with package names and last updated info)
+  * state information in ``state``:
 
-    # Create the new repo on GitHub, then update your remote
-    git remote set-url origin git@github.com:nexB/your-new-repo.git
+    * ``null``: mining has not started.
+    * ``initital-sync`` : at the start of mining we need to mine a huge amount of packages for packageURL to catch up.
+      This is typically very large and could take several hours to several days dependening on the ecosystem size.
+      We fetch and save an index state and mine all packageURLs till there. Once we reach a state where remaining
+      new packageURLs can be mined in a couple hours, we can move on to the next state where we mine new packageURLs
+      added in a periodic manner.  
+    * ``periodic-sync`` : This is a periodic update of new packageURLs added in the index in a period, and typically this
+      should not take more than a couple hours.
 
-From here, you can make the appropriate changes to the files for your specific project.
+  * optional elements to improve readability/debugging:
 
-Update an existing project
----------------------------
+    * ``date``: date of last checkpoint update
 
-.. code-block:: bash
-
-    cd my-existing-project
-    git remote add skeleton git@github.com:nexB/skeleton
-    git fetch skeleton
-    git merge skeleton/main --allow-unrelated-histories
-
-This is also the workflow to use when updating the skeleton files in any given repository.
-
-More usage instructions can be found in ``docs/skeleton-usage.rst``.
-
-
-Release Notes
-=============
-
-- 2025-03-31:
-
-    - Use ruff as the main code formatting tool, add ruff rules to pyproject.toml
-
-- 2025-03-29:
-
-    - Add support for beta macOS-15
-    - Add support for beta windows-2025
-
-- 2025-02-14:
-
-    - Drop support for Python 3.8, add support in CI for Python 3.13, use Python 3.12 as default
-      version.
-
-- 2025-01-17:
-
-    - Drop support for macOS-12, add support for macOS-14
-    - Add support in CI for ubuntu-24.04
-    - Add support in CI for Python 3.12
-
-- 2024-08-20:
-
-    - Update references of ownership from nexB to aboutcode-org
-
-- 2024-07-01:
-
-    - Drop support for Python 3.8
-    - Drop support for macOS-11, add support for macOS-14
-
-- 2024-02-19:
-
-    - Replace support in CI of default ubuntu-20.04 by ubuntu-22.04
-
-- 2023-10-18:
-
-    - Add dark mode support in documentation
-
-- 2023-07-18:
-
-    - Add macOS-13 job in azure-pipelines.yml
-
-- 2022-03-04:
-
-    - Synchronize configure and configure.bat scripts for sanity
-    - Update CI operating system support with latest Azure OS images
-    - Streamline utility scripts in etc/scripts/ to create, fetch and manage third-party
-      dependencies. There are now fewer scripts. See etc/scripts/README.rst for details
-
-- 2021-09-03:
-    - ``configure`` now requires pinned dependencies via the use of ``requirements.txt``
-      and ``requirements-dev.txt``
-    - ``configure`` can now accept multiple options at once
-    - Add utility scripts from scancode-toolkit/etc/release/ for use in generating project files
-    - Rename virtual environment directory from ``tmp`` to ``venv``
-    - Update README.rst with instructions for generating ``requirements.txt``
-      and ``requirements-dev.txt``, as well as collecting dependencies as wheels and generating
-      ABOUT files for them.
-
-- 2021-05-11:
-    - Adopt new configure scripts from ScanCode TK that allows correct configuration of which
-      Python version is used.
+* ``packages_checkpoints.json``: stores checkpoint related to:
+  
+  * ``packages_mined``: which packages have been mined in the ``initital-sync`` state.

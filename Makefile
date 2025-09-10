@@ -45,10 +45,6 @@ clean:
 	@echo "-> Clean the Python env"
 	./configure --clean
 
-test:
-	@echo "-> Run the test suite"
-	${VENV}/bin/pytest -vvs
-
 docs:
 	rm -rf docs/_build/
 	@${ACTIVATE} sphinx-build docs/source docs/_build/

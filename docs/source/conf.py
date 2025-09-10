@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "nexb-skeleton"
+project = "minecode-pipelines"
 copyright = "nexB Inc., AboutCode and others."
 author = "AboutCode.org authors and contributors"
 
@@ -35,24 +35,6 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinx_copybutton",
 ]
-
-
-# Redirects for olds pages
-# See https://documatt.gitlab.io/sphinx-reredirects/usage.html
-redirects = {}
-
-# This points to aboutcode.readthedocs.io
-# In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot
-# Link was created at commit - https://github.com/aboutcode-org/aboutcode/commit/faea9fcf3248f8f198844fe34d43833224ac4a83
-
-intersphinx_mapping = {
-    "aboutcode": ("https://aboutcode.readthedocs.io/en/latest/", None),
-    "scancode-workbench": (
-        "https://scancode-workbench.readthedocs.io/en/develop/",
-        None,
-    ),
-}
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -79,9 +61,9 @@ master_doc = "index"
 
 html_context = {
     "display_github": True,
-    "github_user": "nexB",
-    "github_repo": "nexb-skeleton",
-    "github_version": "develop",  # branch
+    "github_user": "aboutcode-data",
+    "github_repo": "minecode-pipelines-config",
+    "github_version": "main",  # branch
     "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
 }
 
