@@ -35,7 +35,7 @@ Configuration format
 
   * optional elements to improve readability/debugging:
 
-    * ``date``: date of last checkpoint update
+    * ``last_updated``: date and time of last checkpoint update
 
 * ``packages_checkpoints.json``: stores checkpoint related to:
   
