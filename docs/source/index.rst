@@ -1,5 +1,5 @@
 Welcome to miencode-pipelines documentation!
-=========================================
+=============================================
 
 This is released at pypi: https://pypi.org/project/minecode-pipelines/
 
