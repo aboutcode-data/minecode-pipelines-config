@@ -1,9 +1,9 @@
 on: [workflow_dispatch]
 
 jobs:
-  mine-pypi-purls:
+  mine-alpine-purls:
     runs-on: ubuntu-24.04
-    name: Mine pypi PackageURLs
+    name: Mine alpine PackageURLs
     steps:
     - uses: aboutcode-org/scancode-action@beta
       with:
