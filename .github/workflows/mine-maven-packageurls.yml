@@ -10,7 +10,7 @@ jobs:
         scancodeio-repo-branch: "collect-purl-metadata#egg=scancodeio[mining]"
         pipelines: "mine_maven"
       env:
-        FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/minecode-data-pypi-test
+        FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/minecode-data-maven-test
         FEDERATEDCODE_GIT_SERVICE_TOKEN: ${{ secrets.MINING_GITHUB_TOKEN }}
         FEDERATEDCODE_GIT_SERVICE_NAME: "AboutCode Automation"
         FEDERATEDCODE_GIT_SERVICE_EMAIL: "automation@aboutcode.org"
