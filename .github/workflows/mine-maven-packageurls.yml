@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: aboutcode-org/scancode-action@beta
       with:
-        scancodeio-repo-branch: "collect-purl-metadata#egg=scancodeio[mining]"
+        scancodeio-repo-branch: "collect-purl-metadata-2#egg=scancodeio[mining]"
         pipelines: "mine_maven"
       env:
         FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/minecode-data-maven-test
