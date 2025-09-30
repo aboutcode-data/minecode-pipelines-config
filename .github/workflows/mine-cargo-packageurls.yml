@@ -7,7 +7,8 @@ jobs:
     steps:
     - uses: aboutcode-org/scancode-action@beta
       with:
-        scancodeio-repo-branch: "git+https://github.com/ziadhany/scancode.io.git@update-clone-repo#egg=scancodeio[mining]"
+        scancodeio-repo-url: "https://github.com/ziadhany/scancode.io.git"
+        scancodeio-repo-branch: "update-clone-repo"
         pipelines: "mine_cargo"
       env:
         FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/minecode-data-cargo-test
