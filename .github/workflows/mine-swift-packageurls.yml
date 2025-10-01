@@ -3,14 +3,14 @@ on: [workflow_dispatch]
 jobs:
   mine-pypi-purls:
     runs-on: ubuntu-24.04
-    name: Mine pypi PackageURLs
+    name: Mine Swift PackageURLs
     steps:
     - uses: aboutcode-org/scancode-action@beta
       with:
         scancodeio-repo-branch: "collect-purl-metadata#egg=scancodeio[mining]"
         pipelines: "mine_swift"
       env:
-        FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/minecode-data-pypi-test
+        FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/minecode-data-swift-test
         FEDERATEDCODE_GIT_SERVICE_TOKEN: ${{ secrets.MINING_GITHUB_TOKEN }}
         FEDERATEDCODE_GIT_SERVICE_NAME: "AboutCode Automation"
         FEDERATEDCODE_GIT_SERVICE_EMAIL: "automation@aboutcode.org"
