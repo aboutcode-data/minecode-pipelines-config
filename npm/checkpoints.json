@@ -1,4 +1,5 @@
 {
-    "state": null,
-    "last_seq": null
+    "state": "initial-sync",
+    "last_seq": 89331829,
+    "date": "2025-12-10 16:14:35.070314"
 }
