@@ -1,3 +1,15 @@
 {
-    "packages_mined": []
+    "packages_mined": [
+        "pkg:pypi/0-.-.-.-.-.-.-.-.-.-.-.-.-0",
+        "pkg:pypi/00101s",
+        "pkg:pypi/001-hello-uv",
+        "pkg:pypi/00smalinux",
+        "pkg:pypi/01changer",
+        "pkg:pypi/02122group14",
+        "pkg:pypi/0pencv",
+        "pkg:pypi/0wneg",
+        "pkg:pypi/1",
+        "pkg:pypi/101703488-sargun",
+        "pkg:pypi/102003161-hunar-topsis"
+    ]
 }
