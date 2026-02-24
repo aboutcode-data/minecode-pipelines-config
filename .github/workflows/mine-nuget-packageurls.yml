@@ -11,6 +11,7 @@ jobs:
     - uses: aboutcode-org/scancode-action@beta
       with:
         scancodeio-repo-branch: "minecode-git-deployment#egg=scancodeio[mining]"
+        python-version:  3.12
         pipelines: "mine_nuget"
       env:
         FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data
