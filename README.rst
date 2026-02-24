@@ -9,7 +9,7 @@ To install `minecode-pipelines` with scancode.io:
 * Specify the federatedcode settings in ``.env`` file
 * Run ``make clean && make dev-mining && make run``
 * Then select and start the mining pipeline according to which ecosystem
-  you want to mine packageURLs from.
+  you want to mine Package-URLs (PURLs) from.
 
 Configuration format
 =======================
@@ -17,7 +17,7 @@ Configuration format
 * configuration/checkpoints for each ecossytem would be stored in a root folder
   with the same name as the package type defined in https://github.com/package-url/purl-spec (example: ``pypi``)
 
-* ``checkpoints.json`` stores checkpoints related to the package URL mining like:
+* ``checkpoints.json`` stores checkpoints related to the PURL mining like:
 
   * last serial number processed (used in indexes at pypi, npm etc)
   * last processed commit (where the data is stored in git repos)
@@ -27,15 +27,15 @@ Configuration format
 
     * ``null``: mining has not started.
     * ``initital-sync`` : at the start of mining we need to mine a huge
-      amount of packages for packageURL to catch up.
+      amount of packages for PURL to catch up.
       This is typically very large and could take several hours to several days
       dependening on the ecosystem size.
-      We fetch and save an index state and mine all packageURLs till there.
+      We fetch and save an index state and mine all PURLs till there.
       Once we reach a state where remaining
-      new packageURLs can be mined in a couple hours, we can move on to
-      the next state where we mine new packageURLs
+      new PURLs can be mined in a couple hours, we can move on to
+      the next state where we mine new PURLs
       added in a periodic manner.
-    * ``periodic-sync`` : This is a periodic update of new packageURLs
+    * ``periodic-sync`` : This is a periodic update of new PURLs
       added in the index in a period, and typically this
       should not take more than a couple hours.
 
