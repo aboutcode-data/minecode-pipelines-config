@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 jobs:
   mine-cpan-purls:
     runs-on: ubuntu-24.04
-    name: Mine cpan PackageURLs
+    name: Mine cpan Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:

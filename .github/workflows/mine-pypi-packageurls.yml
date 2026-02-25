@@ -3,11 +3,12 @@ on: [workflow_dispatch]
 jobs:
   mine-pypi-purls:
     runs-on: ubuntu-24.04
-    name: Mine pypi PackageURLs
+    name: Mine pypi Package-URLs
     steps:
-    - uses: aboutcode-org/scancode-action@beta
+    - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:
-        scancodeio-repo-branch: "minecode-git-deployment#egg=scancodeio[mining]"
+        scancodeio-repo-branch: "minecode-git-deployment"
+        scancodeio-extras: "mining"
         pipelines: "mine_pypi"
       env:
         FEDERATEDCODE_GIT_ACCOUNT_URL: https://github.com/aboutcode-data/

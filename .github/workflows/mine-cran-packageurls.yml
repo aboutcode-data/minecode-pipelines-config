@@ -6,7 +6,7 @@ on:
 jobs:
   mine-cran-purls:
     runs-on: ubuntu-24.04
-    name: Mine cran PackageURLs
+    name: Mine cran Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:

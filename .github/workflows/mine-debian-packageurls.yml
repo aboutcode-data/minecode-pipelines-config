@@ -6,7 +6,7 @@ on:
 jobs:
   mine-debian-purls:
     runs-on: ubuntu-24.04
-    name: Mine debian PackageURLs
+    name: Mine debian Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:

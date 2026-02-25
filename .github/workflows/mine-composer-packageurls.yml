@@ -6,7 +6,7 @@ on:
 jobs:
   mine-composer-purls:
     runs-on: ubuntu-24.04
-    name: Mine composer PackageURLs
+    name: Mine composer Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:

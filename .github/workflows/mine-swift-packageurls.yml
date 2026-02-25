@@ -6,7 +6,7 @@ on:
 jobs:
   mine-pypi-purls:
     runs-on: ubuntu-24.04
-    name: Mine Swift PackageURLs
+    name: Mine Swift Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:
