@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-24.04
     name: Mine NuGet PackageURLs
     steps:
-    - uses: aboutcode-org/scancode-action@32-scio-extras
+    - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:
         scancodeio-repo-branch: "minecode-git-deployment"
         scancodeio-extras: "mining"
