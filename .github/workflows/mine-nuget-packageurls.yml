@@ -6,7 +6,7 @@ on:
 jobs:
   mine-nuget-purls:
     runs-on: ubuntu-24.04
-    name: Mine NuGet PackageURLs
+    name: Mine NuGet Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:

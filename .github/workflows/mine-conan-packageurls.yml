@@ -6,7 +6,7 @@ on:
 jobs:
   mine-conan-purls:
     runs-on: ubuntu-24.04
-    name: Mine conan PackageURLs
+    name: Mine conan Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:

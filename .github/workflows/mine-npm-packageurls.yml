@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 jobs:
   mine-npm-purls:
     runs-on: ubuntu-24.04
-    name: Mine Npm PackageURLs
+    name: Mine Npm Package-URLs
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:
