@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: aboutcode-org/scancode-action@purl-mining-branch
       with:
-        scancodeio-repo-branch: "minecode-git-deployment"
+        scancodeio-repo-branch: "aboutcode-data"
         scancodeio-extras: "mining"
         pipelines: "mine_alpine"
       env:
